@@ -8,6 +8,7 @@ from PyQt5.QtQml import QQmlApplicationEngine
 from Ninja_Preview.preview import Preview
 from Ninja_Preview._ninjapreview_resource import rcc
 
+
 def dummy_run():
     pass
 
