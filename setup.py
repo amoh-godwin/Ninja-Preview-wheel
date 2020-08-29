@@ -1,9 +1,9 @@
 from setuptools import setup, find_packages
 setup(
     name="Ninja_Preview",
-    version="2.0",
+    version="2.1-beta",
     packages=find_packages(),
-    install_requires=['PyQt5 >= 5.10, <5.15', 'Qmlview >= 1.1'],
+    install_requires=['Qmlview >= 1.1'],
     entry_points={
             'gui_scripts': ['Ninja_Preview = Ninja_Preview.Ninja_preview:dummy_run'],
     },
