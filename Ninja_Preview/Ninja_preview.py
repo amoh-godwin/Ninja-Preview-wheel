@@ -36,10 +36,8 @@ engine = QQmlApplicationEngine()
 
 preview = Preview()
 
-engine.rootContext().setContextProperty('preview', preview)
-
 engine.load("qrc:///UI/main.qml")
-
+engine.rootObjects()[0].setProperty('preview', preview)
 engine.quit.connect(qApp.quit)
 
 sys.exit(qApp.exec_())
