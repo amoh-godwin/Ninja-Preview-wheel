@@ -11,6 +11,7 @@
 
 #PyCache
 /__pycache__
+__pycache__
 
 #dist path
 /dist
