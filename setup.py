@@ -1,11 +1,15 @@
 from setuptools import setup, find_packages
+
+with open("README.md", 'r') as r_file:
+    readme = r_file.read()
+
 setup(
-    name="Ninja_Preview",
-    version="2.1-beta",
+    name="Ninja-Preview",
+    version="2.2",
     packages=find_packages(),
     install_requires=['Qmlview >= 1.1'],
     entry_points={
-            'gui_scripts': ['Ninja_Preview = Ninja_Preview.Ninja_preview:dummy_run'],
+            'gui_scripts': ["Ninja-Preview=Ninja_Preview.Ninja_preview:dummy_run"],
     },
 
     author="Amoh - Gyebi Godwin Ampofo Michael",
@@ -28,10 +32,7 @@ setup(
         "Operating System :: OS Independent",
         "Topic :: Software Development :: Libraries :: Python Modules"
     ],
-    long_description = """\
-    Ninja_Preview is a Graphical User Interface that aims at letting you 
-    use qmlview, which is just like qmlscene in a more flexible way, since 
-    both do not provide with Graphical User Interfaces.
-    """
+    long_description = readme,
+    long_description_content_type = "text/markdown"
     
 )

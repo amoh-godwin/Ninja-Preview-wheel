@@ -12,6 +12,9 @@ from Ninja_Preview._ninjapreview_resource import rcc
 def dummy_run():
     pass
 
+def cleanUp():
+    if os.path.exists('_ninjapreview_resource.rcc'):
+        os.remove('_ninjapreview_resource.rcc')
 
 dec = b64decode(rcc)
 
@@ -27,15 +30,14 @@ QCoreApplication.setApplicationName("Ninja-Preview")
 settings = QSettings()
 
 qApp.setWindowIcon(QIcon(":icons/logo.png"))
+qApp.aboutToQuit.connect(cleanUp)
 
 engine = QQmlApplicationEngine()
 
 preview = Preview()
 
-engine.rootContext().setContextProperty('preview', preview)
-
 engine.load("qrc:///UI/main.qml")
-
+engine.rootObjects()[0].setProperty('preview', preview)
 engine.quit.connect(qApp.quit)
 
 sys.exit(qApp.exec_())
